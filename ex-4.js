@@ -374,4 +374,16 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const filterNull = bills.filter((data) => data.member !== null);
+const billMembers = filterNull.map((data) => data.member.name);
+
+function selectName(accumulator,name){
+   if(accumulator.includes(name)===true){
+    return accumulator;
+   }else{
+    accumulator.push(name);
+    return accumulator
+   }
+}
+const totalMembers = billMembers.reduce(selectName,[]);
+console.log(`Unique Members Count: ${totalMembers.length}`)
