@@ -7,8 +7,8 @@ function updateCarCollection(carBrand) {
     let text = carCollection.join(",");
     return `new car collection is : ${text}.`
   }else{
-    let position = carCollection.indexOf(carBrand)+1;
-    return `${carBrand} has already existed in the ${position} position of car collection.`
+    let pos = carCollection.indexOf(carBrand)+1;
+    return `${carBrand} has already existed in the ${pos} position of car collection.`
   }
 }
 
