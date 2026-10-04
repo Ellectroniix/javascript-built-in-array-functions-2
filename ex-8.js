@@ -375,4 +375,15 @@ const bills = [
 
 // Start coding here
 
-const totalPaidByLocation;
+function sumByLocation(accumulator,info){
+   if((info.location in accumulator) === true){
+    accumulator[info.location] = accumulator[info.location] + info.total;
+   }else{
+    accumulator[info.location] = info.total;
+   }
+   return accumulator; 
+}
+const totalPaidByLocation = bills.reduce(sumByLocation,{});
+
+console.log(totalPaidByLocation);
+
